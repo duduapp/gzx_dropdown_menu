@@ -18,6 +18,7 @@ class GZXDropDownMenu extends StatefulWidget {
   final Color maskColor;
   final DropdownMenuChange dropdownMenuChanging;
   final DropdownMenuChange dropdownMenuChanged;
+  final Color backgroundColor;
 
   const GZXDropDownMenu(
       {Key key,
@@ -26,7 +27,8 @@ class GZXDropDownMenu extends StatefulWidget {
       this.animationMilliseconds = 500,
       this.maskColor = const Color.fromRGBO(0, 0, 0, 0.5),
       this.dropdownMenuChanging,
-      this.dropdownMenuChanged})
+      this.dropdownMenuChanged,
+      this.backgroundColor = const Color.fromRGBO(255, 255, 255, 1)})
       : super(key: key);
 
   @override
@@ -178,7 +180,7 @@ class _GZXDropDownMenuState extends State<GZXDropDownMenu> with SingleTickerProv
         child: Column(
           children: <Widget>[
             Container(
-              color: Colors.white,
+              color: widget.backgroundColor,
               width: MediaQuery.of(context).size.width,
               height: _animation == null ? 0 : _animation.value,
               child: widget.menus[menuIndex].dropDownWidget,
