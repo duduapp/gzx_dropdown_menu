@@ -90,11 +90,12 @@ class _GZXDropDownHeaderState extends State<GZXDropDownHeader> with SingleTicker
     return Container(
       key: _keyDropDownHeader,
       height: widget.height,
+      padding: EdgeInsets.only(bottom:10),
 //      padding: EdgeInsets.only(top: 1, bottom: 1),
-      decoration: BoxDecoration(
-        border: Border.all(color: widget.borderColor, width: widget.borderWidth),
-      ),
-      child: gridView,
+//      decoration: BoxDecoration(
+//        border: Border.all(color: widget.borderColor, width: widget.borderWidth),
+//      ),
+      child: widget.items.length == 1 ? _menu(widget.items[0]) : gridView,
     );
   }
 
